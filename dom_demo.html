@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <button id="btn1">Create</button>
+    <p class="rikkei">Rikkei Academy</p>
+    <p class="rikkei">Rikkeisoft</p>
+    <h2>Fukuoka - JV230627</h2>
+    <h2>Các bạn rất vui</h2>
+    <div id="zone01">
+        <p>Đoạn văn 1</p>
+        <p>Đoạn văn 2</p>
+    </div>
+    <button id="btn2" style="color: red;">
+        <span>Update</span>
+    </button>
+    Rikkei Academy: <input type="text" value="Học viện rikkei" readonly="true" />
+    fukuoka: <input type="text" id="fukuoka" />
+    <script>
+        //1. Truy cập vào phần tử button có id = btn1
+        let btnCreate = document.getElementById("btn1");
+        console.log(btnCreate);
+        //2. Truy cập vào các phần tử có class là rikkei - trả ra một mảng các phần tử
+        let rikkei = document.getElementsByClassName("rikkei");
+        console.log(rikkei);
+        //3. Truy cập vào các phần tử h2 trong trang web - qua tagName - trả ra một mảng các phần tử
+        let h2Tag = document.getElementsByTagName("h2");
+        console.log(h2Tag);
+        //4. Truy cập thông qua bộ chọn - querySelector - trả ra 1 phần tử
+        //Truy cập vào phần tử p đầu tiên trong div có id = zone01
+        //#zone01 p: chọn tất cả p trong thẻ có id=zone01
+        let divP = document.querySelector("#zone01 p");
+        console.log(divP);
+        //5. Truy cập vào tất cả các phần tử thỏa mãn bộ chọn - mảng NodeList
+        let divPAll = document.querySelectorAll("#zone01 p");
+        console.log(divPAll);
+        //innerHTML: Lấy các nội dung HTML trong thẻ
+        //In ra nội dung HTML trong thẻ có id là btn2
+        //B1: Truy cập đến thẻ có id = btn2
+        let btn2 = document.getElementById("btn2");
+        //B2: sử dụng phương thức innerHTML để lấy nội dung HTML của thẻ có id = btn2
+        console.log("Nội dung HTML của thẻ có id là btn2 là:", btn2.innerHTML);
+        btn2.innerHTML = "<i>Edit</i>";//newValue
+        //innerText: lấy nội dung của thẻ
+        //In ra nội dung text trong thẻ có id là btn2
+        console.log("Nội dung text của thẻ có id là btn2 là:", btn2.innerText);
+        btn2.innerText = "Cập nhật";//newValue
+        //element.attribute: lấy giá trị thuộc tính của thẻ
+        console.log("Giá trị thuộc tính style của phần tử có id là btn2:", btn2.style);
+        //Lấy giá trị thuộc tính type của thẻ input
+        //B1: truy cập vào phần tử input
+        let input = document.querySelector("input");
+        //B2: lấy giá trị của thuộc tính type
+        console.log("Giá trị thuộc tính type của thẻ input:", input.type);
+        console.log("Giá trị thuộc tính value của thẻ input:", input.value);
+        input.value = "Rikkei Academy";
+        console.log("Giá trị thuộc tính readonly của thẻ input:", input.readOnly);
+        input.readOnly = false;
+        console.log("Màu của thuộc tính color trong button btn2 là:", btn2.style.color);
+        btn2.style.color = "blue";
+        //Thêm thuộc tính value = Học viên fukuoka vào phần tử input có id=fukuoka
+        //B1: truy cập vào phần tử input có id=fukuoka
+        let inputFukuoka = document.getElementById("fukuoka");
+        //B2: sử dụng setAttribute để thêm thuộc tính cho đối tượng input
+        inputFukuoka.setAttribute("value", "Học viên Fukuoka");
+
+    </script>
+</body>
+
+</html>

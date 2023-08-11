@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 6</title>
+</head>
+
+<body>
+    <script>
+        let book1 = {
+            inputData: function (bookId, bookName, price, author, bookStatus) {
+                this.bookId = bookId;
+                this.bookName = bookName;
+                this.price = price;
+                this.author = author;
+                this.bookStatus = bookStatus;
+            },
+            displayData: function () {
+                console.log("BookId:", this.bookId, "Book Name:", this.bookName, "Price:", this.price);
+                console.log("Author:", this.author, "Book Status:", this.bookStatus);
+            }
+        }
+        let book2 = {
+            inputData: function (bookId, bookName, price, author, bookStatus) {
+                this.bookId = bookId;
+                this.bookName = bookName;
+                this.price = price;
+                this.author = author;
+                this.bookStatus = bookStatus;
+            },
+            displayData: function () {
+                console.log("BookId:", this.bookId, "Book Name:", this.bookName, "Price:", this.price);
+                console.log("Author:", this.author, "Book Status:", this.bookStatus);
+            }
+        }
+        let arrBook = [];
+
+        book1.inputData("B001", "Sách 1", 20, "Nguyễn Văn A", true);
+
+        book2.inputData("B002", "Sách 2", 20, "Nguyễn Văn B", false);
+        arrBook.push(book1);
+        arrBook.push(book2);
+        book2.bookName = "Sách 3";
+        arrBook.slice(0, 1);
+        book1.displayData();
+        book2.displayData();
+    </script>
+</body>
+
+</html>

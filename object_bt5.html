@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 5</title>
+</head>
+
+<body>
+    <script>
+        //Class
+        class Calculator {
+            constructor() {
+                //Khai báo và khởi tạo giá trị thuộc tính của đối tượng
+                this.number1 = 0;
+                this.number2 = 0;
+            }
+            //function (method) - hành vi của đối tượng
+            read(num1, num2) {
+                this.number1 = num1;//number1 = 3
+                this.number2 = num2;//number2 = 4
+            }
+            //Hành vi của đối tượng - method
+            sum() {
+                return this.number1 + this.number2;
+            }
+            //Hành vi - method
+            mul() {
+                return this.number1 * this.number2;
+            }
+        }
+        //Object Constructor
+        function Calculate() {
+            this.number1 = 0;
+            this.number2 = 0;
+            read = function (num1, num2) {
+                this.number1 = num1;
+                this.number2 = num2;
+            }
+            sum = function () {
+                return this.number1 + this.number2;
+            }
+            mul = function () {
+                return this.number1 * this.number2;
+            }
+        }
+        //Literal
+        let objCalculate = {
+            "number1": 0,
+            "number2": 0,
+            read: function (num1, num2) {
+                this.number1 = num1;
+                this.number2 = num2;
+            },
+            sum: function () {
+                return this.number1 + this.number2;
+            },
+            mul: function () {
+                return this.number1 * this.number2;
+            }
+        }
+        //Object
+        let objCal = new Object();
+        objCal.number1 = 0;
+        objCal.number2 = 0;
+        objCal.read = function (num1, num2) {
+            this.number1 = num1;
+            this.number2 = num2;
+        }
+        objCal.sum = function () {
+            return this.number1 + this.number2;
+        }
+        obj.mul = function () {
+            return this.number1 * this.number2;
+        }
+
+        //Kiểm tra
+        let cal = new Calculator();
+
+        cal.read(3, 4)//num1=3;num2=4;
+        console.log("Đối tượng cal:", cal);
+        console.log("Tổng 2 số:", cal.sum());
+        console.log("Tích 2 số:", cal.mul());
+    </script>
+</body>
+
+</html>
